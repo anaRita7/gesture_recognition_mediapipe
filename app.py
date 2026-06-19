@@ -16,9 +16,7 @@ from model.motion_recognizer import MotionRecognizer
 
 MODEL_PATH = "hand_landmarker.task"
 
-# ============================================================
 # Arguments
-# ============================================================
 
 def get_args():
 
@@ -30,9 +28,7 @@ def get_args():
 
     return parser.parse_args()
 
-# ============================================================
 # Main
-# ============================================================
 
 def main():
 
@@ -118,9 +114,7 @@ def main():
     cap.release()
     cv.destroyAllWindows()
 
-# ============================================================
 # Landmark utilities
-# ============================================================
 
 def calc_landmark_list(image, hand_landmarks):
 
@@ -145,9 +139,7 @@ def calc_bounding_rect(landmark_list):
 
     return [x, y, x + w, y + h]
 
-# ============================================================
 # Drawing
-# ============================================================
 
 def draw_bounding_rect(image, brect):
 

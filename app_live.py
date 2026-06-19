@@ -20,9 +20,7 @@ latest_result = None
 latest_timestamp = 0
 last_processed_timestamp = -1
 
-# ============================================================
 # Arguments
-# ============================================================
 
 def get_args():
 
@@ -34,9 +32,7 @@ def get_args():
 
     return parser.parse_args()
 
-# ============================================================
 # Callback for LIVE_STREAM mode
-# ============================================================
 
 def result_callback(result, output_image, timestamp_ms):
     global latest_result
@@ -45,9 +41,7 @@ def result_callback(result, output_image, timestamp_ms):
     latest_result = result
     latest_timestamp = timestamp_ms
 
-# ============================================================
 # Main
-# ============================================================
 
 def main():
 
@@ -142,9 +136,7 @@ def main():
     cap.release()
     cv.destroyAllWindows()
 
-# ============================================================
 # Landmark utilities
-# ============================================================
 
 def calc_landmark_list(image, hand_landmarks):
 
@@ -169,9 +161,7 @@ def calc_bounding_rect(landmark_list):
 
     return [x, y, x + w, y + h]
 
-# ============================================================
 # Drawing
-# ============================================================
 
 def draw_bounding_rect(image, brect):
 
